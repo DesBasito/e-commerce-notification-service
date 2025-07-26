@@ -24,6 +24,7 @@ public class NotificationsConsumer {
 
     private final NotificationRepository repository;
     private final EmailService emailService;
+
     @KafkaListener(topics = "payment-topic")
     public void consumePaymentSuccessNotifications(PaymentConfirmation paymentConfirmation) throws MessagingException {
         log.info(format("Consuming the message from payment-topic Topic:: %s", paymentConfirmation));
